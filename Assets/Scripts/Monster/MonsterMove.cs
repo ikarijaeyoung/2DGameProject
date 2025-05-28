@@ -33,7 +33,6 @@ public class MonsterMove : MonoBehaviour
     }
     private void Move()
     {
-
         Vector2 targetPosition = new Vector2(target.transform.position.x, 0f);
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
     }

@@ -2,28 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimation : MonoBehaviour
+public class MonsterAniController : MonoBehaviour
 {
-    private Player player;
     private Animator animator;
 
     private Coroutine attackCoroutine;
     private bool isAttacking = false;
+    [SerializeField] private float attackSpeed = 3f;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        player = GetComponent<Player>();
-        animator.SetBool("IsRun", true);
+        animator.SetBool("IsIdle", true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Monster"))
+        Debug.Log("맞았다.");
+        if (collision.CompareTag("Player"))
         {
+            Debug.Log("Player이다.");
             isAttacking = true;
             if (attackCoroutine == null)
             {
+                Debug.Log("공격 시작");
                 attackCoroutine = StartCoroutine(AttackCoroutine());
             }
         }
@@ -31,17 +33,18 @@ public class PlayerAnimation : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Monster"))
-        {
+        Debug.Log("나갔다.");
+        if (collision.CompareTag("Player"))
+        {   
+            Debug.Log("Player가 나갔다.");
             isAttacking = false;
             if (attackCoroutine != null)
             {
+                Debug.Log("공격 중지");
                 StopCoroutine(attackCoroutine);
                 attackCoroutine = null;
             }
-
-            animator.SetBool("IsIdle", false);
-            animator.SetBool("IsRun", true);
+            animator.SetBool("IsIdle", true);
         }
     }
 
@@ -49,28 +52,11 @@ public class PlayerAnimation : MonoBehaviour
     {
         while (isAttacking)
         {
-            animator.SetBool("IsRun", false);
             animator.SetBool("IsIdle", true);
-
             animator.SetTrigger("Attack");
 
-            yield return new WaitForSeconds(player.attackSpeed);
+            yield return new WaitForSeconds(attackSpeed);
 
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Monster"))
-        {
-            BackGroundScroll.isScrolling = false;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Monster"))
-        {
-            BackGroundScroll.isScrolling = true;
         }
     }
 }
