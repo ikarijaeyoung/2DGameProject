@@ -42,7 +42,6 @@ public class MonsterMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isMoving = false;
-            Debug.Log("Monster has collided with the player.");
         }
     }
 }
