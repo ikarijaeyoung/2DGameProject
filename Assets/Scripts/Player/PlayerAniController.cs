@@ -17,34 +17,26 @@ public class PlayerAnimation : MonoBehaviour
         animator.SetBool("IsRun", true);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnMonsterEnterPlayerAttackRange(Collider2D collision)
     {
-        if (collision.CompareTag("Monster"))
+        isAttacking = true;
+        if (attackCoroutine == null)
         {
-            isAttacking = true;
-            if (attackCoroutine == null)
-            {
-                attackCoroutine = StartCoroutine(AttackCoroutine());
-            }
+            attackCoroutine = StartCoroutine(AttackCoroutine());
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void OnMonsterExitPlayerAttackRange(Collider2D collision)
     {
-        if (collision.CompareTag("Monster"))
+        isAttacking = false;
+        if (attackCoroutine != null)
         {
-            isAttacking = false;
-            if (attackCoroutine != null)
-            {
-                StopCoroutine(attackCoroutine);
-                attackCoroutine = null;
-            }
-
-            animator.SetBool("IsIdle", false);
-            animator.SetBool("IsRun", true);
+            StopCoroutine(attackCoroutine);
+            attackCoroutine = null;
         }
+        animator.SetBool("IsIdle", false);
+        animator.SetBool("IsRun", true);
     }
-
     private IEnumerator AttackCoroutine()
     {
         while (isAttacking)
@@ -56,21 +48,6 @@ public class PlayerAnimation : MonoBehaviour
 
             yield return new WaitForSeconds(player.attackSpeed);
 
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Monster"))
-        {
-            BackGroundScroll.isScrolling = false;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Monster"))
-        {
-            BackGroundScroll.isScrolling = true;
         }
     }
 }

@@ -421,7 +421,8 @@ GameObject:
   m_Component:
   - component: {fileID: 537027674}
   - component: {fileID: 537027673}
-  m_Layer: 0
+  - component: {fileID: 537027675}
+  m_Layer: 10
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,6 +489,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2124190572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &537027675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537027672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e7769aa0e937714d9e9f0b8da5c7a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBodyLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,7 +1126,7 @@ GameObject:
   - component: {fileID: 1622949188}
   - component: {fileID: 1622949187}
   - component: {fileID: 1622949189}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1401,7 +1417,7 @@ GameObject:
   - component: {fileID: 2124190576}
   - component: {fileID: 2124190578}
   - component: {fileID: 2124190579}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: Rat_Monster
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -1633,6 +1649,14 @@ PrefabInstance:
     - target: {fileID: 1849556228077951131, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1849556228077951131, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2242995962971644608, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4193862052218814158, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
       propertyPath: m_Constraints
