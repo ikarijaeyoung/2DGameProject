@@ -1525,10 +1525,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d7fbc2f8d7cdf478c22e2fdec07db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOutTime: 3
   attackSpeed: 3
   maxHP: 10
   curHP: 0
-  attackDamage: 10
+  attackDamage: 1
 --- !u!114 &2124190576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1609,6 +1610,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 279778145140682978, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1461148804378341630, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.47

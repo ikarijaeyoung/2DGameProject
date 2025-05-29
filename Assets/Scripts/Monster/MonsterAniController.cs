@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class MonsterAniController : MonoBehaviour
 {
+    private Monster monster;
+    private BoxCollider2D attackRangeCollider;
     private Animator animator;
     private Animator playerAnimator;
-    private Monster monster;
     private Coroutine attackCoroutine;
     private bool isAttacking = false;
-    private BoxCollider2D attackRangeCollider;
     void Start()
     {
-        animator = GetComponent<Animator>();
-        animator.SetBool("IsIdle", true);
         monster = GetComponent<Monster>();
         attackRangeCollider = GetComponentInChildren<BoxCollider2D>();
+        animator = GetComponent<Animator>();
         playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        animator.SetBool("IsIdle", true);
     }
 
     public void OnPlayerEnterAttackRange(Collider2D playerBodyCollider)
@@ -51,7 +51,7 @@ public class MonsterAniController : MonoBehaviour
     public void DealDamage()
     {
         Collider2D[] hits = Physics2D.OverlapBoxAll
-        (attackRangeCollider.bounds.center,attackRangeCollider.bounds.size, 0f, LayerMask.GetMask("PlayerBody"));
+        (attackRangeCollider.bounds.center, attackRangeCollider.bounds.size, 0f, LayerMask.GetMask("PlayerBody"));
 
         foreach (Collider2D hit in hits)
         {
@@ -74,4 +74,5 @@ public class MonsterAniController : MonoBehaviour
             }
         }
     }
+    
 }

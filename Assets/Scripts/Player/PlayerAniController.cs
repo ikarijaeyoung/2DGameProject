@@ -5,17 +5,17 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     private Player player;
+    private BoxCollider2D attackRangeCollider;
     private Animator animator;
     private Animator monsterAnimator;
     private Coroutine attackCoroutine;
     private bool isAttacking = false;
-    private BoxCollider2D attackRangeCollider;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
         player = GetComponent<Player>();
         attackRangeCollider = GetComponentInChildren<BoxCollider2D>();
+        animator = GetComponent<Animator>();
         monsterAnimator = GameObject.FindGameObjectWithTag("Monster").GetComponent<Animator>();
         animator.SetBool("IsRun", true);
 
