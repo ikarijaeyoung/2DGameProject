@@ -9,6 +9,7 @@ public class PlayerAnimation : MonoBehaviour
     private Animator animator;
     private Animator monsterAnimator;
     private Coroutine attackCoroutine;
+    private Spawner spawner;
     private bool isAttacking = false;
 
     void Start()
@@ -63,6 +64,7 @@ public class PlayerAnimation : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
+
         if (collision.gameObject.CompareTag("Monster"))
         {
             BackGroundScroll.isScrolling = true;

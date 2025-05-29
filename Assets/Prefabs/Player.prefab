@@ -275,6 +275,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 2
+  fadeOutTime: 2
+  maxHP: 100
+  curHP: 0
+  attackDamage: 10
 --- !u!114 &4262856113828033769
 MonoBehaviour:
   m_ObjectHideFlags: 0

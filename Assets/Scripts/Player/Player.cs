@@ -25,6 +25,11 @@ public class Player : MonoBehaviour
     }
     public void Die()
     {
+        StartCoroutine(WaitForDieAnimation());
+    }
+    private IEnumerator WaitForDieAnimation()
+    {
+        yield return new WaitForSeconds(1f);
         StartCoroutine(FadeOutAfterDeath());
     }
     private IEnumerator FadeOutAfterDeath()
