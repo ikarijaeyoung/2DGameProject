@@ -5,4 +5,23 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] public float attackSpeed = 2f;
+    public int maxHP = 10;
+    public int curHP;
+    public int attackDamage = 1;
+    void Start()
+    {
+        curHP = maxHP;
+    }
+    public void TakeDamage(int damage)
+    {
+        curHP -= damage;
+        if (curHP <= 0)
+        {
+            Die();
+        }
+    }
+    public void Die()
+    {
+        Debug.Log("Player : 죽음.");
+    }
 }

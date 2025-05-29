@@ -503,7 +503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBodyLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 128
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,6 +1525,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d7fbc2f8d7cdf478c22e2fdec07db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSpeed: 3
+  maxHP: 10
+  curHP: 0
+  attackDamage: 10
 --- !u!114 &2124190576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1597,7 +1601,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f16c80114d6d0447b6b80eb31d4101c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 3
 --- !u!1001 &8217093245269549430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1649,18 +1652,6 @@ PrefabInstance:
     - target: {fileID: 1849556228077951131, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1849556228077951131, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2242995962971644608, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4193862052218814158, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
-      propertyPath: m_Constraints
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5920371170370737929}
   - component: {fileID: 6779193170647541797}
-  m_Layer: 0
+  - component: {fileID: 6942933221893000613}
+  m_Layer: 8
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,6 +78,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.98, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &6942933221893000613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242995962971644608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfb787125cbf5c4b9a7e4be612040aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &8724192415529652211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87,11 +103,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2253911629886400664, guid: 6ce664f04930d8748abb3ca0fb2d677f, type: 3}
       propertyPath: m_Name
-      value: idle
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: 6ce664f04930d8748abb3ca0fb2d677f, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: 6ce664f04930d8748abb3ca0fb2d677f, type: 3}
       propertyPath: m_TagString
@@ -103,7 +119,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: b3dc7a0f1d57d274088522573f1e8ee9, type: 2}
     - target: {fileID: 7878350319992209165, guid: 6ce664f04930d8748abb3ca0fb2d677f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 6ce664f04930d8748abb3ca0fb2d677f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -245,7 +261,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!114 &279778145140682978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,4 +301,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa423a58a89f6a4fa639a84219738e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
