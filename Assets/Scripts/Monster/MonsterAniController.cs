@@ -7,7 +7,6 @@ public class MonsterAniController : MonoBehaviour
     private Monster monster;
     private BoxCollider2D attackRangeCollider;
     private Animator animator;
-    private Animator playerAnimator;
     private Coroutine attackCoroutine;
     private bool isAttacking = false;
     void Start()
@@ -15,7 +14,6 @@ public class MonsterAniController : MonoBehaviour
         monster = GetComponent<Monster>();
         attackRangeCollider = GetComponentInChildren<BoxCollider2D>();
         animator = GetComponent<Animator>();
-        playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         animator.SetBool("IsIdle", true);
     }
 
@@ -52,7 +50,7 @@ public class MonsterAniController : MonoBehaviour
     {
         Collider2D[] hits = Physics2D.OverlapBoxAll
         (attackRangeCollider.bounds.center, attackRangeCollider.bounds.size, 0f, LayerMask.GetMask("PlayerBody"));
-
+        Animator playerAnimator = GameObject.FindWithTag("Player").GetComponent<Animator>();
         foreach (Collider2D hit in hits)
         {
             Player player = hit.GetComponent<Player>();
@@ -60,6 +58,7 @@ public class MonsterAniController : MonoBehaviour
             {
                 player.TakeDamage(monster.attackDamage);
                 playerAnimator.SetTrigger("Hit");
+
                 if (player.curHP <= 0)
                 {
                     playerAnimator.SetTrigger("Die");

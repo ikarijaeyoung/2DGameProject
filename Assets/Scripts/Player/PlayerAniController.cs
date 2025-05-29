@@ -7,7 +7,6 @@ public class PlayerAnimation : MonoBehaviour
     private Player player;
     private BoxCollider2D attackRangeCollider;
     private Animator animator;
-    private Animator monsterAnimator;
     private Coroutine attackCoroutine;
     private Spawner spawner;
     private bool isAttacking = false;
@@ -17,7 +16,6 @@ public class PlayerAnimation : MonoBehaviour
         player = GetComponent<Player>();
         attackRangeCollider = GetComponentInChildren<BoxCollider2D>();
         animator = GetComponent<Animator>();
-        monsterAnimator = GameObject.FindGameObjectWithTag("Monster").GetComponent<Animator>();
         animator.SetBool("IsRun", true);
 
     }
@@ -75,6 +73,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         Collider2D[] hits = Physics2D.OverlapBoxAll
         (attackRangeCollider.bounds.center,attackRangeCollider.bounds.size, 0f, LayerMask.GetMask("MonsterBody"));
+        Animator monsterAnimator = GameObject.FindWithTag("Monster").GetComponent<Animator>();
 
         foreach (Collider2D hit in hits)
         {
