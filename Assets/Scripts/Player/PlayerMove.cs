@@ -7,18 +7,20 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private float jumpForce = 10f;
     private Rigidbody2D rb;
-    private Vector2 movement;
+    public float inputX;
     private bool isGrounded;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         animator.SetBool("IsIdle", true);
     }
     private void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
+        PlayerInput();
         if (Input.GetKeyDown(KeyCode.F) && isGrounded)
         {
             Jump();
@@ -30,8 +32,8 @@ public class PlayerMove : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(movement.x * speed, rb.velocity.y);
-        if (movement.x != 0)
+        Move();
+        if (inputX != 0)
         {
             animator.SetBool("IsIdle", false);
             animator.SetBool("IsRun", true);
@@ -41,6 +43,27 @@ public class PlayerMove : MonoBehaviour
             animator.SetBool("IsIdle", true);
             animator.SetBool("IsRun", false);
         }
+    }
+    private void PlayerInput()
+    {
+        inputX = Input.GetAxis("Horizontal");
+    }
+
+    private void Move()
+    {
+        rb.velocity = new Vector2(inputX * speed, rb.velocity.y);
+
+        if (inputX < 0)
+        {
+            spriteRenderer.flipX = true;
+
+        }
+        else if (inputX > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        // 위와 아래 코드 동일
+        // _spriteRenderer.flipX = inputX < 0; // 왼쪽으로 이동하면 스프라이트 반전
     }
     private void Jump()
     {
