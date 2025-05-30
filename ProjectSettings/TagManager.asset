@@ -12,11 +12,11 @@ TagManager:
   - Monster
   - Water
   - UI
-  - Player
   - Ground
-  - 
-  - 
-  - 
+  - PlayerBody
+  - PlayerAttackRange
+  - MonsterBody
+  - MonsterAttackRange
   - 
   - 
   - 
