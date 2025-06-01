@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] public float attackSpeed = 2f;
     [SerializeField] private float fadeOutTime = 3f;
-    public int maxHP = 10;
-    public int curHP;
-    public int attackDamage = 1;
     private SpriteRenderer spriteRenderer;
+    [SerializeField] public float attackSpeed;
+    public int maxHP;
+    public int curHP;
+    public int attackDamage;
+    public int level;
+    public int gold;
+    public string playerName;
+    public GameData gameData;
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        gameData = new GameData();
+        gameData.InitializeNewGame(0, "PlayerName"); // 예시로 슬롯 0과 기본 이름 사용
+        gameData.LoadData();
         curHP = maxHP;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
+    
     public void TakeDamage(int damage)
     {
         curHP -= damage;

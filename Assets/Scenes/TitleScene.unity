@@ -313,7 +313,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 832622229}
         m_TargetAssemblyTypeName: SlotUI, Assembly-CSharp
-        m_MethodName: OpenSlotPanel
+        m_MethodName: ToGameHomeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -446,8 +446,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 832622229}
         m_TargetAssemblyTypeName: SlotUI, Assembly-CSharp
-        m_MethodName: HandleSlotButtonClick
-        m_Mode: 3
+        m_MethodName: LoadSelectedGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -736,8 +736,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 832622229}
         m_TargetAssemblyTypeName: SlotUI, Assembly-CSharp
-        m_MethodName: HandleSlotButtonClick
-        m_Mode: 3
+        m_MethodName: LoadSelectedGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1239,8 +1239,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 832622229}
         m_TargetAssemblyTypeName: SlotUI, Assembly-CSharp
-        m_MethodName: HandleSlotButtonClick
-        m_Mode: 3
+        m_MethodName: LoadSelectedGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2601,83 +2601,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808118853}
   m_CullTransparentMesh: 1
---- !u!1 &832622226
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 832622228}
-  - component: {fileID: 832622227}
-  - component: {fileID: 832622229}
-  - component: {fileID: 832622230}
-  m_Layer: 0
-  m_Name: UImanager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &832622227
+--- !u!114 &832622227 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1050860540688624064, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+  m_PrefabInstance: {fileID: 6237976397591637622}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832622226}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22bd264e871b63a4db1fbb62aee1603d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingPanel: {fileID: 45983793}
-  volumeSlider: {fileID: 2078757069}
-  masterMixer: {fileID: 24100000, guid: 9319646f5c3b54e49ab399db15150487, type: 2}
---- !u!4 &832622228
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832622226}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &832622229
+--- !u!114 &832622229 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2114184890310547084, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+  m_PrefabInstance: {fileID: 6237976397591637622}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832622226}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f26ed63ccdb3f1c4cbe8676f732cb6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotPanel: {fileID: 1513462402}
-  slotButtons: []
-  slotTexts: []
-  slotInputFields: []
-  slotCanvasGroups: []
-  numberOfSlots: 3
-  DataSlots: []
-  slotOptionPanel: {fileID: 229440987}
-  currentlySelectedSlotIndex: -1
---- !u!114 &832622230
+--- !u!114 &832622230 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8432199970867912763, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+  m_PrefabInstance: {fileID: 6237976397591637622}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832622226}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9d8b74c5951a164fbc0e1018f76fe59, type: 3}
@@ -5750,6 +5701,79 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &6237976397591637622
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1050860540688624064, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: settingPanel
+      value: 
+      objectReference: {fileID: 45983793}
+    - target: {fileID: 1050860540688624064, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: volumeSlider
+      value: 
+      objectReference: {fileID: 2078757069}
+    - target: {fileID: 1437583595878503807, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437583595878503807, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437583595878503807, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437583595878503807, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437583595878503807, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437583595878503807, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437583595878503807, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437583595878503807, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437583595878503807, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437583595878503807, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114184890310547084, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: slotPanel
+      value: 
+      objectReference: {fileID: 1513462402}
+    - target: {fileID: 2114184890310547084, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: slotOptionPanel
+      value: 
+      objectReference: {fileID: 229440987}
+    - target: {fileID: 5076938450763669437, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
+      propertyPath: m_Name
+      value: UImanager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8d85cf7ed40ab7849819f1e681772c7c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5761,4 +5785,4 @@ SceneRoots:
   - {fileID: 45983797}
   - {fileID: 1513462406}
   - {fileID: 229440991}
-  - {fileID: 832622228}
+  - {fileID: 6237976397591637622}
