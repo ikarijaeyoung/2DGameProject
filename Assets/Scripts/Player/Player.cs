@@ -13,14 +13,13 @@ public class Player : MonoBehaviour
     public int level;
     public int gold;
     public string playerName;
-    public GameData gameData;
     void Start()
     {
-        gameData = new GameData();
-        gameData.InitializeNewGame(0, "PlayerName"); // 예시로 슬롯 0과 기본 이름 사용
-        gameData.LoadData();
-        curHP = maxHP;
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    private void Init()
+    {
+        
     }
     
     public void TakeDamage(int damage)

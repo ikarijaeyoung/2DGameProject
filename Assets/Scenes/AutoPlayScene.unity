@@ -280,9 +280,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SlotUI, Assembly-CSharp
-        m_MethodName: ToGameHomeScene
+      - m_Target: {fileID: 67853790}
+        m_TargetAssemblyTypeName: AutoPlaySceneUIManager, Assembly-CSharp
+        m_MethodName: OnClickBackHomeButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1999,6 +1999,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 279778145140682978, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
+      propertyPath: gold
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 279778145140682978, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
+      propertyPath: curHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 279778145140682978, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1461148804378341630, guid: a94e9b55a44dbee4bbe58521643a6502, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.47

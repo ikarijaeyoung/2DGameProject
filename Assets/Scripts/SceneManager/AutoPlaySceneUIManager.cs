@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class AutoPlaySceneUIManager : MonoBehaviour
 {
-    private void OnClickBackHomeButton()
+    public void OnClickBackHomeButton()
     {
-        // 현재 정보를 저장 하고,
         SceneManager.LoadScene("GameHomeScene");
     }
 }
