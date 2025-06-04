@@ -41,6 +41,7 @@ public class PlayerData
         playerName = string.IsNullOrEmpty(nameInput) ? $"모험가 {slotIndex + 1}" : nameInput;
         gold = 100;
         maxHP = 100;
+        curHP = maxHP;
         attackDamage = 10;
         attackSpeed = 1f;
     }
