@@ -33,6 +33,14 @@ public class GameManager : MonoBehaviour
             Debug.Log($"게임 데이터 저장됨: 슬롯 {CurrentGameData.slotIndex + 1}");
         }
     }
+    public void UpdateCurrentGameData(int playerLevel, int playerGold, int playerMaxHP, int playerCurHP, int playerAttackDamage, float playerAttackSpeed, string currentPlayerName)
+{
+    if (CurrentGameData != null)
+    {
+        CurrentGameData.UpdateDataFromPlayer(playerLevel, playerGold, playerMaxHP, playerCurHP, playerAttackDamage, playerAttackSpeed, currentPlayerName);
+        Debug.Log($"GameManager의 CurrentGameData가 업데이트됨. 현재 HP: {CurrentGameData.curHP}");
+    }
+}
     public void SetGameDataFromSlotUI(PlayerData data)
     {
         CurrentGameData = data;

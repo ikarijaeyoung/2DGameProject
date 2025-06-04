@@ -1183,9 +1183,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1409005799}
-        m_TargetAssemblyTypeName: GameHomeSceneManager, Assembly-CSharp
-        m_MethodName: OnClickTitleButton
+      - m_Target: {fileID: 1409005800}
+        m_TargetAssemblyTypeName: GameInitializer, Assembly-CSharp
+        m_MethodName: SaveCurrentGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1195,9 +1195,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1409005800}
-        m_TargetAssemblyTypeName: GameInitializer, Assembly-CSharp
-        m_MethodName: SaveCurrentGame
+      - m_Target: {fileID: 1409005799}
+        m_TargetAssemblyTypeName: GameHomeSceneManager, Assembly-CSharp
+        m_MethodName: OnClickTitleButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
