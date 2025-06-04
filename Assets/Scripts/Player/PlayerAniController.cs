@@ -9,6 +9,8 @@ public class PlayerAnimation : MonoBehaviour
     private Animator animator;
     private Coroutine attackCoroutine;
     private Spawner spawner;
+    private AudioSource audioSource;
+    [SerializeField] public AudioClip hitSound;
     private bool isAttacking = false;
 
     void Start()
@@ -16,6 +18,7 @@ public class PlayerAnimation : MonoBehaviour
         player = GetComponent<Player>();
         attackRangeCollider = GetComponentInChildren<BoxCollider2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         animator.SetBool("IsRun", true);
 
     }
@@ -74,6 +77,7 @@ public class PlayerAnimation : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapBoxAll
         (attackRangeCollider.bounds.center,attackRangeCollider.bounds.size, 0f, LayerMask.GetMask("MonsterBody"));
         Animator monsterAnimator = GameObject.FindWithTag("Monster").GetComponent<Animator>();
+        AudioSource monsterAudioSource = GameObject.FindWithTag("Monster").GetComponent<AudioSource>();
 
         foreach (Collider2D hit in hits)
         {
@@ -81,6 +85,7 @@ public class PlayerAnimation : MonoBehaviour
             if (monster != null)
             {
                 monster.TakeDamage(player.attackDamage);
+                monsterAudioSource.PlayOneShot(hitSound);
                 monsterAnimator.SetTrigger("Hit");
                 if (monster.curHP <= 0)
                 {

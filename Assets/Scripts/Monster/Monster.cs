@@ -26,6 +26,9 @@ public class Monster : MonoBehaviour
         if (curHP <= 0)
         {
             Die();
+            Player player = FindObjectOfType<Player>();
+            player.gold += 10;
+            GameManager.Instance.UpdateCurrentGameData(player.level, player.gold, player.maxHP, player.curHP, player.attackDamage, player.attackSpeed, player.playerName);
         }
     }
     public void Die()
